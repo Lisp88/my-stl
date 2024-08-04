@@ -1,7 +1,7 @@
 //
 // Created by 28238 on 2024/7/23.
 //
-
+#pragma once
 #ifndef MY_STL_MY_VECTOR_H
 #define MY_STL_MY_VECTOR_H
 #include "stdexcept"
