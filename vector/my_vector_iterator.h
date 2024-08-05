@@ -20,6 +20,43 @@ namespace my_stl{
         bool operator != (const iterator & other) const{
             return m_pointer != other.m_pointer;
         }
+
+        iterator & operator = (const iterator & other){
+            if(this == &other) return *this;
+
+            m_pointer = other.m_pointer;
+            return *this;
+        }
+
+        iterator & operator ++ (){
+            ++m_pointer;
+            return *this;
+        }
+
+        iterator operator ++ (int){
+            iterator tmp = *this;
+            ++m_pointer;
+            return tmp;
+        }
+
+        T & operator * () const{
+            return *m_pointer;
+        }
+
+        iterator & operator --(){
+            --m_pointer;
+            return *this;
+        }
+
+        iterator operator -- (int){
+            iterator tmp = *this;
+            --m_pointer;
+            return tmp;
+        }
+
+        T * operator ->(){
+            return m_pointer;
+        }
     private:
         T * m_pointer;
     };

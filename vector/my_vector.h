@@ -6,11 +6,15 @@
 #define MY_STL_MY_VECTOR_H
 #include "stdexcept"
 #include <iostream>
+
+#include "my_vector_iterator.h"
 using namespace std;
 
 namespace my_stl {
     template<typename T>
     class Vector {
+    public:
+        typedef VectorIterator<T> iterator;
     public:
         Vector();
         ~Vector();
@@ -44,6 +48,10 @@ namespace my_stl {
         void reserve(int n);//*
         //打印
         void print() const;
+
+        //迭代器
+        iterator begin();
+        iterator end();
 
     private:
         T* m_data;
